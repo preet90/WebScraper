@@ -3,14 +3,14 @@ import json
 
 data = {}
 data[''] = []
-browser = webdriver.Chrome(executable_path=r'e:\chromedriver_win32\chromedriver.exe')
-browser.get('link')
+browser = webdriver.Chrome(executable_path=r'CHROME_DRIVER_LOCATION')
+browser.get('URL')
 
 for i in browser.find_elements_by_xpath('//a[@class="shelfProductTile-descriptionLink"]'):
     try:
 
         print(i.get_attribute("href"))
-        browser2 = webdriver.Chrome(executable_path=r'e:\chromedriver_win32\chromedriver.exe')
+        browser2 = webdriver.Chrome(executable_path=r'CHROME_DRIVER_LOCATION')
         browser2.get(i.get_attribute("href"))
 
         name = browser2.find_element_by_xpath('//div[@class="productDetail-tile"]/h1')
